@@ -48,11 +48,11 @@ This is an example command and control server project built to educate myself on
 
 ## Tech Stack
 
-- **C2 Core Server**: Python (FastAPI) or Go
-- **Web UI**: React + TailwindCSS
+- **C2 Core Server**: C++
+- **Web UI**: React 
 - **DB**: PostgreSQL
 - **Agents**: C/C++, Rust (Windows/Linux/macOS)
-- **CLI**: Python Click / Go Cobra
+- **CLI**: C++
 
 ---
 
