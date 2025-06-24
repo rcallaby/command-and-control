@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.16)
+project(c2_cpp VERSION 0.1 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Third party headers
+include_directories(third_party)
+
+# Core server
+add_executable(c2server
+    core/main.cpp
+    core/server.cpp core/server.h
+    core/agents.cpp core/agents.h
+    core/tasks.cpp core/tasks.h
+    core/database.cpp core/database.h
+    core/thread_pool.h
+)
+
+target_link_libraries(c2server pthread pqxx pq)
+
+# CLI
+add_executable(c2cli cli/c2cli.cpp)
+target_link_libraries(c2cli pthread pqxx pq)
+
+# Agents
+add_executable(agent_linux agents/linux/agent.cpp)
+add_executable(agent_windows agents/windows/agent.cpp)
+add_executable(agent_macos agents/macos/agent.cpp)
