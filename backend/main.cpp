@@ -5,8 +5,6 @@
 
 using json = nlohmann::json;
 
-
-
 int main() {
     crow::SimpleApp app;
     Database db;
